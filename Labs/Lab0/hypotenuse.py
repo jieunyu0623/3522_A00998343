@@ -6,7 +6,7 @@ def calculateHypotenuse(side1: int, side2: int):
     return hypotenuse
 
 
-def sum(num1: int, num2: int):
+def add(num1: int, num2: int):
     return num1 + num2
 
 
@@ -48,7 +48,7 @@ if __name__ == '__main__':
 
         value1 = int(input("Enter first number"))
         value2 = int(input("Enter second number"))
-        result = sum(value1, value2)
+        result = add(value1, value2)
         print(result)
 
     elif option == 3:
