@@ -117,9 +117,9 @@ def main():
     Creates a library with dummy data and prompts the user for input.
     """
 
-    b1 = Book("100.200.300", "Harry Potter 1", 2, "J K Rowling"),
-    b2 = Book("999.224.854", "Harry Potter 2", 5, "J K Rowling"),
-    b3 = Book("631.495.302", "Harry Potter 3", 4, "J K Rowling"),
+    b1 = Book("100.200.300", "Harry Potter 1", 2, "J K Rowling")
+    b2 = Book("999.224.854", "Harry Potter 2", 5, "J K Rowling")
+    b3 = Book("631.495.302", "Harry Potter 3", 4, "J K Rowling")
     b4 = Book("123.02.204", "The Cat in the Hat", 1, "Dr. Seuss")
     cat = Catalogue([b1, b2, b3, b4])
     lib = Library(cat)
