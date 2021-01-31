@@ -45,13 +45,13 @@ class Catalogue:
         if the item already exists, don't add the item.
         """
         item = LibraryItemGenerator.create_item()
-        pdb.set_trace()
+        # pdb.set_trace()
         self._catalogue_list.append(item)
         found_item = self._retrieve_item_by_call_number(item.call_number)
         if found_item:
             print(f"Could not add item with call number "
                   f"{item.call_number}. It already exists.")
-        else:
+        if not found_item:
             self._catalogue_list.append(item)
             print("Item has been added successfully!")
             print("Item details: ")
