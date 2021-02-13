@@ -46,4 +46,3 @@ class TestFileHandler(TestCase):
             for _ in f:
                 count_after += 1
         self.assertNotEqual(count, count_after)
-

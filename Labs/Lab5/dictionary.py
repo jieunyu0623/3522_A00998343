@@ -61,7 +61,7 @@ class Dictionary:
         except Exception as e:
             print(f"{e}\nUnknown Exception caught")
         else:
-            print("No exceptions")
+            print("the dictionary file has been loaded. No exceptions occurred.")
         finally:
             print("Done checking error")
 
@@ -72,7 +72,7 @@ class Dictionary:
         :return: String
         """
         definitions = self._data.get(word)
-        output = f"\n***{word}***\n"
+        output = f"\n*** {word} ***\n"
         for definition in definitions:
             output += f"\n{definition}\n"
         return output
@@ -96,7 +96,7 @@ class Dictionary:
             elif word.title() in self._data:
                 output = self.write_definition(word.title())
             else:
-                close_match = get_close_matches(word, self._data)
+                close_match = get_close_matches(word.lower(), self._data)
                 print("Did you mean ")
                 if close_match:
                     for match in close_match:
@@ -115,24 +115,38 @@ class Dictionary:
         any words that are searched are stored in output.txt
         :return: None
         """
-        if not self.is_data_loaded():
-            print("data not loaded!")
-            return
+        file_type = input("Please enter the name of the dictionary file: ")
+        if file_type:
+            self.load_dictionary(file_type)
+        else:
+            raise FileNotFoundError
 
         while True:
-            user_input = input("Word to search: ")
+            user_input = input("\nWord to search: ")
             if user_input.lower() == "exitprogram":
+                print("Thank you for using the dictionary program!")
                 break
             try:
                 result = self.query_definition(user_input)
-                print(f"Results: {result}")
+                if result:
+                    print(f"\nResults: {result}")
             except WordNotFound as e:
                 print(e)
             else:
+                count = 0
+                count_after = 0
+                with open(self._output) as output:
+                    for _ in output:
+                        count += 1
                 FileHandler.write_lines(self._output, result)
-                print("Words successfully written to output.txt")
+                with open(self._output) as op:
+                    for _ in op:
+                        count_after += 1
+
+                if count != count_after:
+                    print("\nWords successfully written to output.txt!")
             finally:
-                print("****End of search****")
+                print("**** End of search ****")
 
 
 def main():
@@ -141,7 +155,6 @@ def main():
     """
 
     dictionary = Dictionary()
-    dictionary.load_dictionary("data.json")
     dictionary.search()
 
 

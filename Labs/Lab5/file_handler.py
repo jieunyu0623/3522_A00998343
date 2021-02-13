@@ -57,5 +57,3 @@ class FileHandler:
         with open(path, mode='a', encoding="utf-8") as result:
             for line in lines:
                 result.write(line)
-
-

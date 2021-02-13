@@ -45,4 +45,3 @@ class TestDictionary(TestCase):
                  "\nA dull, unattractive girl or woman.\n" \
                  "\nAn iron for holding wood in a fireplace.\n"
         self.assertEqual(d.write_definition("dog"), output)
-
