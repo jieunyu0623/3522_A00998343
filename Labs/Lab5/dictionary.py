@@ -122,7 +122,8 @@ class Dictionary:
             raise FileNotFoundError
 
         while True:
-            user_input = input("\nWord to search: ")
+            print("\n\nTo exit the program, please type \"exitprogram\".")
+            user_input = input("Word to search: ")
             if user_input.lower() == "exitprogram":
                 print("Thank you for using the dictionary program!")
                 break
