@@ -10,11 +10,11 @@ A Budget Management Program written in Python.</br></br>
 ##Table of Contents
 
 --------
-* [Introduction] (#introduction)
+* Introduction 
   </br></br>
-* [How To Use It?] (#How-to-use-it)
+* How To Use It?
   </br></br>
-* [Features] (#features)
+* Features
   </br></br>
 
 <a name="introduction"></a>
