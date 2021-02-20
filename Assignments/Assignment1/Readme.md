@@ -7,7 +7,7 @@ A Budget Management Program written in Python.</br></br>
 <b>Set:</b> 3T
 </br></br>
 
-##Table of Contents
+## Table of Contents
 
 --------
 * Introduction 
