@@ -166,7 +166,7 @@ class Bidder:
         :return: boolean
         """
         bid = auctioneer.highest_bid * self._bid_increase_perc
-        return self._budget >= auctioneer.highest_bid
+        return self._budget >= bid
 
     def check_probability(self):
         """
